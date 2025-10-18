@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createHashRouter, RouterProvider } from 'react-router-dom';
 import './styles.css';
 import App from './App.jsx';
 import PublicList from './components/PublicList.jsx';
@@ -10,7 +10,7 @@ import AdminList from './components/AdminList.jsx';
 import AdminForm from './components/AdminForm.jsx';
 
 // Create router with basename for GitHub Pages
-const router = createBrowserRouter(
+const router = createHashRouter(
   [
     {
       path: '/',
