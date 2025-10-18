@@ -31,7 +31,7 @@ export default function NavMenu() {
       .channel('scp-menu')
       .on(
         'postgres_changes',
-        { event: '*', schema: 'public', table: 'scp' },
+        { event: '*', schema: 'public', table: 'SCP' },
         () => load()
       )
       .subscribe();
