@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
-import './index.css';
+import './styles.css';
 import App from './App';
 import PublicList from './components/PublicList';
 import PublicDetail from './components/PublicDetail';
 import AdminLayout from './components/AdminLayout';
 import AdminList from './components/AdminList';
 import AdminForm from './components/AdminForm';
+
 
 const router = createHashRouter([
   {
