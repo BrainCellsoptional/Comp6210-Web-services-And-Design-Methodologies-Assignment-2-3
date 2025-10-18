@@ -79,17 +79,17 @@ export default function AdminForm() {
         if (error) throw error;
       }
 
-      nav('/admin');
+      nav('#/admin');
     } catch (err) {
       alert(err.message);
     } finally {
       setSaving(false);
     }
-    nav('/admin');
+    nav('#/admin');
   };
 
   return (
-    <form onSubmit={onSubmit} className="grid" style={{maxWidth: "70vw"}}>
+    <form onSubmit={onSubmit} className="grid" style={{maxWidth: "70vw"}} noValidate>
       <div>
         <label className="label">Item *</label>
         <input className="input" value={item} onChange={e=>setItem(e.target.value)} required />

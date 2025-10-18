@@ -31,9 +31,6 @@ const router = createHashRouter(
       ],
     },
   ],
-  {
-    basename: '/Comp6210-Web-services-And-Design-Methodologies-Assignment-2-3/', // MUST match repo name
-  }
 );
 
 createRoot(document.getElementById('root')).render(
