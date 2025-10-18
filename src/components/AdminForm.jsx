@@ -126,11 +126,6 @@ export default function AdminForm() {
         <button className="btn" disabled={saving} type="submit">{id ? 'Update' : 'Create'}</button>
         <button className="btn" type="button" onClick={() => history.back()}>Cancel</button>
       </div>
-
-      <p className="label">
-        Tip: To enable writes, sign in (e.g., with supabase.auth.signInWithPassword) and refresh.
-        You can also test from the SQL Editor using INSERT/UPDATE.
-      </p>
     </form>
   );
 }
