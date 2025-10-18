@@ -85,7 +85,7 @@ export default function AdminForm() {
     } finally {
       setSaving(false);
     }
-    window.location.reload();
+    nav('/admin');
   };
 
   return (
