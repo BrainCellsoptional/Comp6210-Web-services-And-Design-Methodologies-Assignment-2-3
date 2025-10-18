@@ -79,13 +79,12 @@ export default function AdminForm() {
         if (error) throw error;
       }
 
-      nav('#/admin');
+      nav('/admin');
     } catch (err) {
       alert(err.message);
     } finally {
       setSaving(false);
     }
-    nav('#/admin');
   };
 
   return (
