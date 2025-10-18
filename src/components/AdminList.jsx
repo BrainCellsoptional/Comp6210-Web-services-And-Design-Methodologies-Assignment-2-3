@@ -30,7 +30,10 @@ export default function AdminList() {
     if (!confirm("Delete this record?")) return;
     const { error } = await supabase.from("SCP").delete().eq("id", id);
     if (error) alert(error.message);
-    await load();
+    else {
+    // ✅ Just update the UI — don't reload or navigate
+    setRows((prevRows) => prevRows.filter((row) => row.id !== id));
+  }
   };
 
   const filteredRows = rows.filter(
