@@ -21,6 +21,7 @@ export default function App() {
             flexShrink: 0,
           }}
         >
+          {/* Logo Image */}
           <img
             src="https://logos-world.net/wp-content/uploads/2021/10/SCP-Emblem.png"
             alt="SCP Logo"
@@ -31,10 +32,12 @@ export default function App() {
               objectFit: "cover",
             }}
           />
+          {/* Title */}
           <div>
             <div style={{ fontWeight: "bold", fontSize: "70%" }}>
               SCP Foundation
             </div>
+            {/* Sub Title*/}
             <div style={{ fontSize: "0.85rem", color: "#aaa" }}>
               Secure, Contain, Protect
             </div>
@@ -43,13 +46,10 @@ export default function App() {
       </header>
 
       <div className="grid grid-cols-2">
-        {/* Menu is always visible (stacks on mobile) */}
         <div className="card">
           <NavMenu />
         </div>
-        {/* Page content (list/detail/admin) */}
         <div className="card">
-          
           <Outlet />
         </div>
       </div>

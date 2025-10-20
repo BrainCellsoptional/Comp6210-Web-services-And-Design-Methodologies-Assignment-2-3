@@ -24,8 +24,10 @@ export default function PublicDetail() {
 
   if (!row) return <p>Loading…</p>;
 
+  /* HTML Code */
   return (
     <article>
+      {/* Public and Admin Buttons*/}
       <div style={{float: "right", marginBottom: "5px"}}>
           <nav className="nav">
             <Link className="link" to="/">
@@ -36,6 +38,7 @@ export default function PublicDetail() {
             </Link>
           </nav>
         </div>
+        {/* Info Display for Cards*/}
       {row.image && <img src={row.image} alt={row.item} style={{ width: '100%', borderRadius: 14, marginBottom: 12 }} />}
       <h2 style={{marginTop:0}}>{row.item}</h2>
       {row.clas && <p className="badge"><Highlight text={row.clas}/></p>}

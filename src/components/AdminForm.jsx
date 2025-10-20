@@ -87,6 +87,8 @@ export default function AdminForm() {
     }
   };
 
+  {/* HTML For Admin Fourm */}
+  {/* Each <div> is a button that allows CRUD Functions*/}
   return (
     <form onSubmit={onSubmit} className="grid" style={{maxWidth: "70vw"}} noValidate>
       <div>

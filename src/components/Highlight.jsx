@@ -1,5 +1,6 @@
 import React from 'react';
 export default function Highlight({ text }) {
+  {/* Changes Color of text Based on SCP Class */}
   const highlighted = text
     .replace(/Euclid/gi, '<span style="color: orange; font-weight: bold;">Euclid</span>')
     .replace(/Safe/gi, '<span style="color: green; font-weight: bold;">Safe</span>')

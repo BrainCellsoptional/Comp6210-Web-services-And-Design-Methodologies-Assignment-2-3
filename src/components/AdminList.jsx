@@ -11,6 +11,7 @@ export default function AdminList() {
   const [search, setSearch] = useState("");
   const searchInputRef = useRef(null);
 
+  {/* Imports database columns*/}
   const load = async () => {
     const { data } = await supabase
       .from("SCP")
@@ -19,6 +20,8 @@ export default function AdminList() {
     setRows(data ?? []);
   };
 
+  {/* Focus for mobile to pull up keyboard */}
+  {/* Havent tested this no idea if it works */}
   useEffect(() => {
     if (searchInputRef.current) {
       searchInputRef.current.focus();
@@ -26,24 +29,28 @@ export default function AdminList() {
     load();
   }, []);
 
+  {/* Delete Function*/}
   const onDelete = async (id) => {
     if (!confirm("Delete this record?")) return;
     const { error } = await supabase.from("SCP").delete().eq("id", id);
     if (error) alert(error.message);
     else {
-    // ✅ Just update the UI — don't reload or navigate
+    //Just update the UI — don't reload or navigate
     setRows((prevRows) => prevRows.filter((row) => row.id !== id));
   }
   };
 
+  {/* Takes user input filters results */}
   const filteredRows = rows.filter(
     (r) =>
       r.item.toLowerCase().includes(search.toLowerCase()) ||
       (r.clas && r.clas.toLowerCase().includes(search.toLowerCase()))
   );
 
+  {/* HTML */}
   return (
     <div>
+      {/* Search Bar*/}
       <input
         ref={searchInputRef}
         type="text"
@@ -60,6 +67,7 @@ export default function AdminList() {
         }}
       />
 
+      {/* Cards and their Allowed Size*/}
       <div
         className="card"
         style={{
@@ -80,6 +88,7 @@ export default function AdminList() {
             </tr>
           </thead>
           <tbody>
+            {/* Displays all SCPs in a scrollable area*/}
             {filteredRows.map((r) => (
               <tr key={r.id}>
                 <td>{r.item}</td>

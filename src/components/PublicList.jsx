@@ -27,7 +27,7 @@ useEffect(() => {
     if (!error) setRows(data ?? []);
   })();
 }, []);
-
+  // Filters displayed cards to only include searched items
   const filteredRows = rows.filter(
     (r) =>
       r.item.toLowerCase().includes(search.toLowerCase()) ||
@@ -44,6 +44,7 @@ useEffect(() => {
           marginBottom: "1rem",
         }}
       >
+        {/* Public and Admin buttons */}
         <h2 style={{ marginTop: 0 }}>View SCPs</h2>
         <div>
           <nav className="nav">
@@ -56,6 +57,7 @@ useEffect(() => {
           </nav>
         </div>
       </div>
+      {/* Search Bar */}
       <input
         ref={searchInputRef}
         type="text"
@@ -71,6 +73,7 @@ useEffect(() => {
           border: "1px solid #ccc",
         }}
       />
+      {/* Scrollable area*/}
       <div
         className="grid container-2"
         style={{
@@ -79,6 +82,7 @@ useEffect(() => {
           overflowY: "auto",
         }}
       >
+        {/* Displays the searched item cards */}
          {filteredRows.length === 0 ? (
           <p>No SCPs found.</p>
         ) : (
@@ -90,6 +94,7 @@ useEffect(() => {
               style={{ display: "block" }}
             >
               <div style={{ fontWeight: 700 }}>{r.item}</div>
+              {/* Cards */}
               <div className="badge">
                 <Highlight text={r.clas || "—"} />
               </div>

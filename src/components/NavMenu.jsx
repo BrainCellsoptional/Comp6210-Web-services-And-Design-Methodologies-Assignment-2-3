@@ -42,6 +42,7 @@ export default function NavMenu() {
     };
   }, []);
 
+  // HTML Return
   return (
     <div className="container-2" style={{ maxHeight: '80vh', overflowY: 'auto' }}>
       <h3 style={{ marginTop: 0 }}>SCPs</h3>
@@ -55,6 +56,7 @@ export default function NavMenu() {
           gap: '12px'
         }}
       >
+        {/* Displays "Nav" Buttons*/}
         {items.map(t => (
           <li key={t.id} style={{ marginBottom: 8 }}>
             <Link
